@@ -1,9 +1,6 @@
 ifneq ($(FROONIX_PRIV_BUILD),)
     ifneq ($(FROONIX_PRIV_BUILD),false)
 
-        # Exclude some packages from default list...
-        PRODUCT_PACKAGES := $(filter-out Email Exchange2,$(PRODUCT_PACKAGES))
-
         # Change OTA server URL for our builds.
         PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://ota.fnx.li/los/{device}/{type}/{incr}
 
