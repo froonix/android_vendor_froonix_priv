@@ -1,5 +1,19 @@
-# Build with our own signing keys
-PRODUCT_DEFAULT_DEV_CERTIFICATE := ${HOME}/.android-certs/releasekey
+ifneq ($(FROONIX_PRIV_BUILD),)
+    ifneq ($(FROONIX_PRIV_BUILD),false)
 
-# Change OTA server URL for our builds
-PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://ota.fnx.li/los/{device}/{type}/{incr}
+        # Exclude some packages from default list...
+        PRODUCT_PACKAGES := $(filter-out Email Exchange2,$(PRODUCT_PACKAGES))
+
+        # Change OTA server URL for our builds.
+        PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://ota.fnx.li/los/{device}/{type}/{incr}
+
+        # Allow downgrading -- it's an OTA server decision!
+        PRODUCT_PROPERTY_OVERRIDES += lineage.updater.allow_downgrading=true
+
+        # Modify version string...
+        ifneq ($(FROONIX_PRIV_BUILD_ID),)
+            LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(FROONIX_PRIV_BUILD_ID)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
+        endif
+
+    endif
+endif
