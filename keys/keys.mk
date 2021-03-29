@@ -1,6 +1,9 @@
 ifneq ($(FROONIX_PRIV_BUILD),)
     ifneq ($(FROONIX_PRIV_BUILD),false)
 
+        # Use German as default language.
+        PRODUCT_LOCALES := de_DE en_US en_GB
+
         # Exclude some packages from default list...
         PRODUCT_PACKAGES := $(filter-out Email Exchange2,$(PRODUCT_PACKAGES))
 
