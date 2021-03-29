@@ -12,3 +12,8 @@ Very stupid hack… 🙄
 ./build/soong/soong_ui.bash --dumpvar-mode "LINEAGE_DISPLAY_VERSION"
 ./build/soong/soong_ui.bash --dumpvar-mode "LINEAGE_VERSION"
 ```
+
+## Build script(s)
+Search for `fnx-los-*.sh` shell scripts:
+
+https://github.com/froonix/misc-stuff/tree/master/scripts
