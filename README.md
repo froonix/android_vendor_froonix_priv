@@ -8,7 +8,7 @@ Very stupid hack… 🙄
 
 ### Dump modified variables
 ```sh
-./build/soong/soong_ui.bash --dumpvar-mode "DEFAULT_SYSTEM_DEV_CERTIFICATE"
-./build/soong/soong_ui.bash --dumpvar-mode "PRODUCT_DEFAULT_DEV_CERTIFICATE"
 ./build/soong/soong_ui.bash --dumpvar-mode "PRODUCT_PROPERTY_OVERRIDES"
+./build/soong/soong_ui.bash --dumpvar-mode "LINEAGE_DISPLAY_VERSION"
+./build/soong/soong_ui.bash --dumpvar-mode "LINEAGE_VERSION"
 ```
