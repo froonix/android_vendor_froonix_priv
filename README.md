@@ -14,6 +14,6 @@ Very stupid hack… 🙄
 ```
 
 ## Build script(s)
-Search for `fnx-los-*.sh` shell scripts:
+Search for `fnx-los-*` shell scripts:
 
 https://github.com/froonix/misc-stuff/tree/master/scripts
