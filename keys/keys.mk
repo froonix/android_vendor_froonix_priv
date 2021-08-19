@@ -12,5 +12,10 @@ ifneq ($(FROONIX_PRIV_BUILD),)
             LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(FROONIX_PRIV_BUILD_ID)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
         endif
 
+        # Required for OTA & recovery!
+        ifneq ($(FROONIX_CERTIFICATE),)
+            PRODUCT_DEFAULT_DEV_CERTIFICATE := $(FROONIX_CERTIFICATE)
+        endif
+
     endif
 endif
